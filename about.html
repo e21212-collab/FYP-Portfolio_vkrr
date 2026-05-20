@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>About – Ego-Motion Mechanosensor Research</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="text-white" style="font-size:1.4rem;">Mech<span class="text-dark">Sensor</span>Research</h1>
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link active">About</a>
+                        <a href="project.html" class="nav-item nav-link">Weekly Updates</a>
+                        <a href="service.html" class="nav-item nav-link">Methodology</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="container-fluid pt-5 bg-primary hero-header mb-5">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-12 text-center text-white mb-5">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Research Background</div>
+                    <h1 class="display-5 text-white mb-3">About This Research</h1>
+                    <p class="text-white-50">Cancellation of Self-Sensing Due to Ego-Motion of Vibration Based Mechanosensors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Content -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">The Problem</div>
+                    <h2 class="mb-4">Why Does Self-Sensing Matter?</h2>
+                    <p>Vibration-based mechanosensors are critical components in robotic hands, prosthetic limbs, and wearable haptic devices. They detect contact forces and texture through vibration signals. However, when the device itself is moving — walking, reaching, or gesturing — it creates its own vibrations.</p>
+                    <p>These internally generated vibrations (ego-motion) contaminate the sensor output, making it impossible to distinguish between external stimuli (e.g. touching a surface) and noise caused by the device's own movement. This is the <strong>self-sensing problem</strong>.</p>
+                    <p>Without solving this, mechanosensors become unreliable in any real-world application where the device is in motion.</p>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">The Approach</div>
+                    <h2 class="mb-4">How We Tackle Ego-Motion Cancellation</h2>
+                    <p>This research investigates multiple strategies to cancel ego-motion-induced self-sensing:</p>
+                    <ul>
+                        <li class="mb-2"><strong>Reference Sensor Subtraction:</strong> A dedicated IMU or accelerometer captures the ego-motion signal, which is then subtracted from the mechanosensor output.</li>
+                        <li class="mb-2"><strong>Adaptive Filtering:</strong> Algorithms such as Least Mean Squares (LMS) dynamically update filter coefficients to cancel the correlated noise component.</li>
+                        <li class="mb-2"><strong>Frequency Domain Separation:</strong> Where ego-motion and external signals occupy different frequency bands, bandpass filtering can isolate the signal of interest.</li>
+                        <li class="mb-2"><strong>Machine Learning Classification:</strong> Trained models can distinguish ego-motion artefacts from genuine tactile events.</li>
+                    </ul>
+                </div>
+                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
+                    <hr>
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Researcher</div>
+                    <h2 class="mb-4">About the Researcher</h2>
+                    <p><strong>⚠️ Update this section with your own information!</strong></p>
+                    <p>Replace this text with your name, your institution/university, your supervisor's name, and a short bio describing your background in sensor engineering, signal processing, or related fields.</p>
+                    <p><em>Example: "I am [Your Name], a [Year] student in [Department] at [University]. My research interests include sensor fusion, signal processing, and biomechatronics. This project is supervised by [Supervisor Name]."</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h5 class="text-white mb-4">MechSensor Research</h5>
+                    <p>14-Week research portfolio on ego-motion cancellation in vibration mechanosensors.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="text-white mb-4">Navigate</h5>
+                    <a class="btn btn-link" href="index.html">Home</a>
+                    <a class="btn btn-link" href="project.html">Weekly Updates</a>
+                    <a class="btn btn-link" href="service.html">Methodology</a>
+                    <a class="btn btn-link" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="container"><div class="copyright"><div class="row"><div class="col-12 text-center">&copy; 2025 MechSensor Research Portfolio. All Rights Reserved.</div></div></div></div>
+    </div>
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Methodology – Ego-Motion Mechanosensor Research</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="text-white" style="font-size:1.4rem;">Mech<span class="text-dark">Sensor</span>Research</h1>
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="project.html" class="nav-item nav-link">Weekly Updates</a>
+                        <a href="service.html" class="nav-item nav-link active">Methodology</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-5 bg-primary hero-header mb-5">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-12 text-center text-white mb-5">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Technical Approach</div>
+                    <h1 class="display-5 text-white mb-3">Research Methodology</h1>
+                    <p class="text-white-50">Methods, tools, and techniques used in this research project</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light mt-5 py-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column text-center rounded p-4">
+                        <div class="service-icon btn-square mx-auto"><i class="fa fa-microscope fa-2x"></i></div>
+                        <h5 class="mb-3">Experimental Setup</h5>
+                        <p>A custom test rig mounts the vibration mechanosensor alongside a reference IMU (accelerometer). Controlled ego-motion is generated using a motorised platform. External vibration stimuli are applied via a calibrated shaker. All signals are captured simultaneously via a high-speed DAQ system.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="service-item d-flex flex-column text-center rounded p-4">
+                        <div class="service-icon btn-square mx-auto"><i class="fa fa-filter fa-2x"></i></div>
+                        <h5 class="mb-3">Adaptive Noise Cancellation (ANC)</h5>
+                        <p>The reference IMU captures ego-motion. An adaptive filter (LMS/RLS algorithm) continuously adjusts its coefficients so that the filtered reference signal best estimates and cancels the ego-motion component in the mechanosensor output. The residual signal represents the true external stimulus.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column text-center rounded p-4">
+                        <div class="service-icon btn-square mx-auto"><i class="fa fa-chart-bar fa-2x"></i></div>
+                        <h5 class="mb-3">Frequency Domain Analysis</h5>
+                        <p>Fast Fourier Transform (FFT) and Power Spectral Density (PSD) analysis identify spectral regions where ego-motion dominates. Cross-coherence analysis between reference and target sensors quantifies how much of the mechanosensor signal is attributable to ego-motion at each frequency.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.4s">
+                    <div class="service-item d-flex flex-column text-center rounded p-4">
+                        <div class="service-icon btn-square mx-auto"><i class="fa fa-check-double fa-2x"></i></div>
+                        <h5 class="mb-3">Performance Evaluation</h5>
+                        <p>Cancellation performance is measured by: (1) Signal-to-Noise Ratio (SNR) improvement before and after cancellation, (2) coherence reduction between reference and mechanosensor output, (3) detection accuracy of external stimuli under various motion conditions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="service-item d-flex flex-column text-center rounded p-4">
+                        <div class="service-icon btn-square mx-auto"><i class="fab fa-python fa-2x"></i></div>
+                        <h5 class="mb-3">Tools & Software</h5>
+                        <p>Python (NumPy, SciPy, Matplotlib) for signal processing and analysis. MATLAB for algorithm prototyping. GitHub for version control and portfolio hosting. Data recorded in CSV format for reproducibility.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="service-item d-flex flex-column text-center rounded p-4">
+                        <div class="service-icon btn-square mx-auto"><i class="fa fa-brain fa-2x"></i></div>
+                        <h5 class="mb-3">Hardware Used</h5>
+                        <p>✏️ <em>Update this card with your actual hardware: sensor model, DAQ board, microcontroller or PC specs, and any special equipment used in your lab setup.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6"><h5 class="text-white mb-4">MechSensor Research</h5><p>14-Week research portfolio on ego-motion cancellation in vibration mechanosensors.</p></div>
+                <div class="col-md-6"><h5 class="text-white mb-4">Navigate</h5>
+                    <a class="btn btn-link" href="index.html">Home</a>
+                    <a class="btn btn-link" href="about.html">About</a>
+                    <a class="btn btn-link" href="project.html">Weekly Updates</a>
+                    <a class="btn btn-link" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="container"><div class="copyright"><div class="row"><div class="col-12 text-center">&copy; 2025 MechSensor Research Portfolio. All Rights Reserved.</div></div></div></div>
+    </div>
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
