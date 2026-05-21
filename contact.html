@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Contact – Ego-Motion Mechanosensor Research</title>
+    <title>Contact – Ego-Motion Mechanosensor Project</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,25 +12,108 @@
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .team-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .team-card:hover { transform: translateY(-6px); }
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0d6efd;
+            margin-bottom: 1rem;
+        }
+        .supervisor-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .supervisor-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f0f4ff;
+            color: #0d6efd;
+            margin: 0 4px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .social-link:hover { background: #0d6efd; color: #fff; }
+        .social-link-light {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            margin: 0 4px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .social-link-light:hover { background: rgba(255,255,255,0.35); color: #fff; }
+        .role-badge {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #0d6efd;
+            border-radius: 20px;
+            padding: 3px 14px;
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+        }
+        .section-divider {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, #0d6efd, #6610f2);
+            border-radius: 2px;
+            width: 60px;
+            margin: 0 auto 1.5rem auto;
+        }
+    </style>
 </head>
 <body>
+
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status"><span class="sr-only">Loading...</span></div>
+        <div class="spinner-grow text-primary" style="width:3rem;height:3rem;" role="status"><span class="sr-only">Loading...</span></div>
     </div>
 
+    <!-- Navbar -->
     <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="text-white" style="font-size:1.4rem;">Mech<span class="text-dark">Sensor</span>Research</h1>
+                    <h1 class="text-white" style="font-size:1.4rem;">Robotic<span class="text-dark">Antenna</span>Research</h1>
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="index.html"   class="nav-item nav-link">Home</a>
+                        <a href="about.html"   class="nav-item nav-link">About</a>
                         <a href="project.html" class="nav-item nav-link">Weekly Updates</a>
                         <a href="service.html" class="nav-item nav-link">Methodology</a>
                         <a href="contact.html" class="nav-item nav-link active">Contact</a>
@@ -40,97 +123,201 @@
         </div>
     </div>
 
+    <!-- Page Header -->
     <div class="container-fluid pt-5 bg-primary hero-header mb-5">
         <div class="container pt-5">
             <div class="row g-5 pt-5">
                 <div class="col-12 text-center text-white mb-5">
-                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Get In Touch</div>
-                    <h1 class="display-5 text-white mb-3">Contact</h1>
-                    <p class="text-white-50">Questions about the research? Feel free to reach out.</p>
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">The People</div>
+                    <h1 class="display-5 text-white mb-3">Meet the Team</h1>
+                    <p class="text-white-50">The researchers and supervisor behind this project</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid bg-light py-5">
-        <div class="container py-5">
+    <!-- Supervisor Section -->
+    <div class="container-fluid py-5" style="background:#f8f9fa;">
+        <div class="container">
+            <div class="text-center mb-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Project Supervisor</div>
+                <h2 class="mb-2">Supervised By</h2>
+                <hr class="section-divider">
+            </div>
+            <div class="row justify-content-center wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-lg-8">
+                    <div class="supervisor-card">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-3 text-center">
+                                <img src="img/supervisor.jpg"
+                                     alt="Supervisor Photo"
+                                     class="supervisor-photo"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div style="display:none; width:140px; height:140px; border-radius:50%; background:rgba(255,255,255,0.15); align-items:center; justify-content:center; margin:0 auto;">
+                                    <i class="fa fa-user fa-3x text-white-50"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <p class="text-white-50 small mb-1 text-uppercase">Supervisor</p>
+                                <h3 class="text-white mb-1">[Supervisor Full Name]</h3>
+                                <p class="text-white-50 mb-3">[Title] · [Department] · [University Name]</p>
+                                <p class="text-white-50 mb-3">
+                                    Research interests include [supervisor's research area]. Supervising this project on bio-inspired robotic sensing and ego-motion cancellation.
+                                </p>
+                                <div>
+                                    <a href="mailto:supervisor@university.edu" class="social-link-light" title="Email">
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
+                                    <a href="https://linkedin.com/in/supervisor-username" target="_blank" class="social-link-light" title="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="https://github.com/supervisor-username" target="_blank" class="social-link-light" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Members Section -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mb-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Research Team</div>
+                <h2 class="mb-2">Team Members</h2>
+                <hr class="section-divider">
+            </div>
+            <div class="row g-4 justify-content-center">
+
+                <!-- ========== TEAM MEMBER 1 ========== -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="team-card">
+                        <img src="img/member1.jpg"
+                             alt="Member 1 Photo"
+                             class="team-photo"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:120px; height:120px; border-radius:50%; background:#e8f4fd; align-items:center; justify-content:center; margin:0 auto 1rem auto;">
+                            <i class="fa fa-user fa-2x text-primary"></i>
+                        </div>
+                        <span class="role-badge">[Role — e.g. Hardware Lead]</span>
+                        <h5 class="mb-1">[Member 1 Full Name]</h5>
+                        <p class="text-muted small mb-3">[Programme] · [Year] · [University]</p>
+                        <p class="text-muted small mb-3">
+                            <i class="fa fa-envelope text-primary me-2"></i>
+                            <a href="mailto:member1@university.edu">member1@university.edu</a>
+                        </p>
+                        <div>
+                            <a href="https://github.com/member1-username" target="_blank" class="social-link" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/member1-username" target="_blank" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:member1@university.edu" class="social-link" title="Email">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== TEAM MEMBER 2 ========== -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="team-card">
+                        <img src="img/member2.jpg"
+                             alt="Member 2 Photo"
+                             class="team-photo"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:120px; height:120px; border-radius:50%; background:#e8f4fd; align-items:center; justify-content:center; margin:0 auto 1rem auto;">
+                            <i class="fa fa-user fa-2x text-primary"></i>
+                        </div>
+                        <span class="role-badge">[Role — e.g. Software Lead]</span>
+                        <h5 class="mb-1">[Member 2 Full Name]</h5>
+                        <p class="text-muted small mb-3">[Programme] · [Year] · [University]</p>
+                        <p class="text-muted small mb-3">
+                            <i class="fa fa-envelope text-primary me-2"></i>
+                            <a href="mailto:member2@university.edu">member2@university.edu</a>
+                        </p>
+                        <div>
+                            <a href="https://github.com/member2-username" target="_blank" class="social-link" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/member2-username" target="_blank" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:member2@university.edu" class="social-link" title="Email">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== TEAM MEMBER 3 ========== -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="team-card">
+                        <img src="img/member3.jpg"
+                             alt="Member 3 Photo"
+                             class="team-photo"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:120px; height:120px; border-radius:50%; background:#e8f4fd; align-items:center; justify-content:center; margin:0 auto 1rem auto;">
+                            <i class="fa fa-user fa-2x text-primary"></i>
+                        </div>
+                        <span class="role-badge">[Role — e.g. Testing Lead]</span>
+                        <h5 class="mb-1">[Member 3 Full Name]</h5>
+                        <p class="text-muted small mb-3">[Programme] · [Year] · [University]</p>
+                        <p class="text-muted small mb-3">
+                            <i class="fa fa-envelope text-primary me-2"></i>
+                            <a href="mailto:member3@university.edu">member3@university.edu</a>
+                        </p>
+                        <div>
+                            <a href="https://github.com/member3-username" target="_blank" class="social-link" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/member3-username" target="_blank" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:member3@university.edu" class="social-link" title="Email">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo upload reminder — DELETE this block once photos are added -->
+    <div class="container-fluid py-4" style="background:#fff8f0; border-top:3px solid #fd7e14;">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="text-center mb-5 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Researcher Contact</div>
-                        <h2 class="mb-4">Reach Out</h2>
-                        <p class="text-muted">✏️ <strong>Update this section</strong> with your actual contact details before publishing. Replace the placeholder below with your real name, university email, and any links you'd like to share (LinkedIn, GitHub, ResearchGate, etc.).</p>
-                    </div>
-
-                    <div class="row g-4 mb-5 text-center">
-                        <div class="col-md-4 wow fadeIn" data-wow-delay="0.1s">
-                            <div class="p-4 bg-white rounded shadow-sm">
-                                <i class="fa fa-user fa-2x text-primary mb-3"></i>
-                                <h6 class="mb-1">Researcher</h6>
-                                <p class="text-muted mb-0">[Your Full Name]</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 wow fadeIn" data-wow-delay="0.2s">
-                            <div class="p-4 bg-white rounded shadow-sm">
-                                <i class="fa fa-envelope fa-2x text-primary mb-3"></i>
-                                <h6 class="mb-1">Email</h6>
-                                <p class="text-muted mb-0">[your.email@university.edu]</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="p-4 bg-white rounded shadow-sm">
-                                <i class="fab fa-github fa-2x text-primary mb-3"></i>
-                                <h6 class="mb-1">GitHub</h6>
-                                <p class="text-muted mb-0"><a href="#">github.com/[yourusername]</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="wow fadeIn" data-wow-delay="0.4s">
-                        <h5 class="mb-3">Send a Message</h5>
-                        <p class="text-muted small mb-4"><em>Note: This is a static site hosted on GitHub Pages — this form does not send emails automatically. To enable email sending, use a free service like <a href="https://formspree.io" target="_blank">Formspree.io</a> and replace the form action below.</em></p>
-                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Your message" id="message" name="message" style="height: 150px" required></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <h6 class="text-warning mb-3"><i class="fa fa-camera me-2"></i>How to Add Your Photos — delete this box once photos are showing</h6>
+                    <ol class="small text-muted mb-0">
+                        <li class="mb-1">Crop photos to square, at least <strong>300×300px</strong>, saved as JPG.</li>
+                        <li class="mb-1">Name them exactly: <code>member1.jpg</code>, <code>member2.jpg</code>, <code>member3.jpg</code>, <code>supervisor.jpg</code></li>
+                        <li class="mb-1">Go to your GitHub repo → click the <strong>img/</strong> folder → <strong>Add file → Upload files</strong></li>
+                        <li class="mb-1">Upload all 4 photos → click <strong>Commit changes</strong></li>
+                        <li>Photos appear within ~1 minute. Then delete this orange box from <code>contact.html</code>.</li>
+                    </ol>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-md-6"><h5 class="text-white mb-4">MechSensor Research</h5><p>14-Week research portfolio on ego-motion cancellation in vibration mechanosensors.</p></div>
-                <div class="col-md-6"><h5 class="text-white mb-4">Navigate</h5>
+                <div class="col-md-6">
+                    <h5 class="text-white mb-4">Robotic Antenna Research</h5>
+                    <p>14-Week research portfolio on ego-motion cancellation in vibration-based mechanosensors using a bio-inspired robotic antenna.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="text-white mb-4">Navigate</h5>
                     <a class="btn btn-link" href="index.html">Home</a>
                     <a class="btn btn-link" href="about.html">About</a>
                     <a class="btn btn-link" href="project.html">Weekly Updates</a>
@@ -138,7 +325,13 @@
                 </div>
             </div>
         </div>
-        <div class="container"><div class="copyright"><div class="row"><div class="col-12 text-center">&copy; 2025 MechSensor Research Portfolio. All Rights Reserved.</div></div></div></div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-12 text-center">&copy; 2025 Robotic Antenna Research Portfolio. All Rights Reserved.</div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
