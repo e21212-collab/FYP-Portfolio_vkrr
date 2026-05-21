@@ -68,10 +68,10 @@
                     <h2 class="mb-4">How We Tackle Ego-Motion Cancellation</h2>
                     <p>This research investigates multiple strategies to cancel ego-motion-induced self-sensing:</p>
                     <ul>
-                        <li class="mb-2"><strong>Reference Sensor Subtraction:</strong> A dedicated IMU or accelerometer captures the ego-motion signal, which is then subtracted from the mechanosensor output.</li>
-                        <li class="mb-2"><strong>Adaptive Filtering:</strong> Algorithms such as Least Mean Squares (LMS) dynamically update filter coefficients to cancel the correlated noise component.</li>
-                        <li class="mb-2"><strong>Frequency Domain Separation:</strong> Where ego-motion and external signals occupy different frequency bands, bandpass filtering can isolate the signal of interest.</li>
-                        <li class="mb-2"><strong>Machine Learning Classification:</strong> Trained models can distinguish ego-motion artefacts from genuine tactile events.</li>
+                        <li class="mb-2">A <strong>bio-inspired cancellation algorithm</strong> — drawing from how insects neurally filter their own body motion — is developed to suppress ego-motion from the sensor signal.</li>
+                        <li class="mb-2"><strong>Reference Sensor / IMU:</strong> An additional sensor on the robot body captures ego-motion, used as a reference signal for cancellation.</li>
+                        <li class="mb-2"><strong>Adaptive Filtering:</strong> LMS/RLS algorithms dynamically subtract the correlated ego-motion component.</li>
+                        <li class="mb-2"><strong>Performance Testing:</strong> Validated using offline data testing and a calibration report.</li>
                     </ul>
                 </div>
                 <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
