@@ -18,7 +18,7 @@ void setup() {
 
   Serial.println("Calibrating... keep sensor still.");
   delay(1000);
-  mpu.calcOffsets(true, true); // gyro + accel calibration
+  mpu.calcOffsets(true, true); 
   Serial.println("Done!");
 }
 
