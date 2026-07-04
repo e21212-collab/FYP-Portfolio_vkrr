@@ -253,7 +253,45 @@
 
         <div class="update-card done wow fadeIn" data-wow-delay="0.1s">
             <div class="row align-items-start">
-                <div class="col-auto"><div class="week-number">Week 4</div></div>
+                <div class="col-auto"><div class="week-number">Week 7</div></div>
+                <div class="col">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-1">Coding & Logic Framework Development</h4>
+                        <span class="badge bg-success">Completed</span>
+                    </div>
+                    <p class="text-muted small mb-2">Focus: Development of embedded firmware for real-time sensor acquisition, actuator control, and telemetry communication.</p>
+                    <p><strong>Objective:</strong> Develop and validate the Arduino firmware required for the bio-inspired tactile sensing platform. The objective was to establish reliable communication with the MPU6050 IMU, acquire real-time vibration data, implement continuous servo-based antenna motion, and transmit the collected sensor data through a high-speed serial interface for future Echo State Network (ESN) training.</p>
+                    <p><strong>Progress:</strong> 
+                    <p><strong>Stage 1</strong>  
+                    <p>The first stage focused on establishing communication between the Arduino and the MPU6050 using the I²C protocol. The accelerometer was configured with an appropriate measurement range and digital filter settings, enabling continuous acquisition of three-axis acceleration data (Ax, Ay, and Az). The measurements were successfully streamed to the host computer through a 115200 baud serial communication interface, confirming reliable real-time telemetry.</p>
+                    <p><strong>Stage 2</strong> 
+                    <p>After validating the IMU communication, the firmware was extended to include two servo motors that generate continuous sinusoidal motion, simulating the oscillatory movement of insect antennae. While the servos were moving, the MPU6050 continuously recorded the resulting vibration profile and streamed the measurements to the host computer. This established the first synchronized sensing framework required for future ESN-based prediction and tactile event detection. </p>
+                    <li class="mb-3">
+                          <i class="fa fa-file-pdf text-danger me-2"></i>
+                          <a href="https://github.com/e21212-collab/FYP-Portfolio_vkrr/blob/main/Arduino%20Firmware%20for%20IMU%20Data%20Acquisition"> Deliverable 8: Initial code developed to establish communication with the MPU6050 and stream three-axis acceleration measurements.</a>
+                          <p><strong>Functions Implemented:</strong> 
+                          <p>MPU6050 initialization</p>
+                          <p>I²C communication</p>
+                          <p>Accelerometer configuration</p>
+                          <p>Continuous acquisition of Ax, Ay and Az</p>
+                          <p>Serial telemetry (115200 baud)</p>
+                        </li>
+                    <li class="mb-3">
+                          <i class="fa fa-file-pdf text-danger me-2"></i>
+                          <a href="https://github.com/e21212-collab/FYP-Portfolio_vkrr/blob/main/Arduino%20Firmware%20for%20Servo%E2%80%93IMU%20Integration"> Deliverable 9: Enhanced firmware integrating continuous servo motion with simultaneous IMU data acquisition, creating the sensing pipeline required for ESN training.</a>
+                          <p><strong>Functions Implemented:</strong> 
+                          <p>Continuous sinusoidal motion of two servos</p>
+                          <p>Real-time MPU6050 acceleration measurement</p>
+                          <p>Simultaneous actuator control and sensor acquisition</p>
+                          <p>High-speed serial telemetry</p>
+                        </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="update-card done wow fadeIn" data-wow-delay="0.1s">
+            <div class="row align-items-start">
+                <div class="col-auto"><div class="week-number">Week 8</div></div>
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="mb-1">Hardware Design & Schematic Drafting</h4>
@@ -272,26 +310,7 @@
 
         <div class="update-card done wow fadeIn" data-wow-delay="0.1s">
             <div class="row align-items-start">
-                <div class="col-auto"><div class="week-number">Week 4</div></div>
-                <div class="col">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="mb-1">Hardware Design & Schematic Drafting</h4>
-                        <span class="badge bg-success">Completed</span>
-                    </div>
-                    <p class="text-muted small mb-2">Focus: Designing of required hardware components.</p>
-                    <p><strong>Objective:</strong> Transitioned from component selection to physical and electrical architecture design, focusing on 3D computer-aided design modeling and initial schematic drafting.</p>
-                    <p><strong>Progress:</strong> Successfully designed the core mechanical assemblies and structural interfaces required to hold the compliant antenna and actuator mechanism. </p>
-                    <li class="mb-3">
-                          <i class="fa fa-file-pdf text-danger me-2"></i>
-                          <a href="https://github.com/e21212-collab/FYP-Portfolio_vkrr/blob/main/docs/Hardware_Design1.jpg.jpeg"> Deliverable 3: Design Schematic 1</a>
-                        </li>
-                </div>
-            </div>
-        </div>
-
-        <div class="update-card done wow fadeIn" data-wow-delay="0.1s">
-            <div class="row align-items-start">
-                <div class="col-auto"><div class="week-number">Week 4</div></div>
+                <div class="col-auto"><div class="week-number">Week 9</div></div>
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="mb-1">Hardware Design & Schematic Drafting</h4>
