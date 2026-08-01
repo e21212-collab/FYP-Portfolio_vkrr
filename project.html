@@ -399,6 +399,7 @@
                     <li></i>Generated sparse recurrent reservoir matrix (W).
                     <li></i>Applied spectral radius normalization.
                     <li></i>Prepared training and testing workflow.
+                    <p>   </p>
                     <li class="mb-3">
                           <i class="fa fa-file-pdf text-danger me-2"></i>
                           <a href="https://github.com/e21212-collab/FYP-Portfolio_vkrr/blob/main/docs/Notes%20on%20ESN%20model%20development.pdf"> Deliverable 17:Notes on ESN model development.</a>
@@ -410,16 +411,51 @@
             </div>
         </div>
 
-        <div class="update-card future wow fadeIn" data-wow-delay="0.1s">
+        <div class="update-card done wow fadeIn" data-wow-delay="0.1s">
             <div class="row align-items-start">
-                <div class="col-auto"><div class="week-number text-secondary">Week 12</div></div>
+                <div class="col-auto"><div class="week-number">Week 12</div></div>
                 <div class="col">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="mb-1">Offline Data Testing and Model Training</h4>
-                        <span class="badge bg-secondary">Upcoming</span>
+                        <h4 class="mb-1">Experimental Dataset Acquisition.</h4>
+                        <span class="badge bg-success">Completed</span>
                     </div>
-                    <!--<p class="text-muted small">Planned: SNR improvement analysis; false positive/negative rates; compare cancellation methods.</p>
-                     <p><em>✏️ Update this section when complete.</em></p>-->
+                    <p class="text-muted small mb-2">Focus: Collection and preparation of offline training datasets.</p>
+                    <p><strong>Objective:</strong> Acquire offline experimental datasets representing normal robot motion and touch events for ESN training and validation.</p>
+                    <p><strong>Progress:</strong>   
+                    <p>Collected real sensor data from the robotic platform. The robot was operated under controlled forward motion while the IMU continuously recorded accelerometer and gyroscope measurements. Separate datasets were also collected by introducing external touches to the compliant antenna during motion.</p>
+                    <p>At this stage, only forward motion was considered to validate the ESN development pipeline before extending the experiments to additional motion directions.</p>
+                    <p><strong>Experimental Data Collected:</strong>
+                    <li></i>10 Normal Forward Motion datasets.
+                    <li></i>4 Touch Event datasets.
+                    <p>   </p>
+                    <p><strong>Technical Activities Completed:</strong>
+                    <li></i>Verified stable sensor acquisition.
+                    <li></i>Generated multiple CSV datasets.
+                    <li></i>Organized datasets into training, validation and touch categories.
+                    <li></i>Inspected data quality before machine learning.
+                    <p>   </p>
+                    <li class="mb-3">
+                          <i class="fa fa-file-pdf text-danger me-2"></i>
+                          <a href="https://github.com/e21212-collab/FYP-Portfolio_vkrr/blob/main/docs/Train%20Data%20Files.zip"> Deliverable 19:Normal Motion Datasets (CSV)</a>
+                    <li class="mb-3">  
+                          <i class="fa fa-file-pdf text-danger me-2"></i>
+                          <a href="https://github.com/e21212-collab/FYP-Portfolio_vkrr/blob/main/docs/Test%20Data%20Files.zip">Deliverable 20: Touch Event Dataset (CSV).</a>
+                        <li class="mb-3">  
+                          <i class="fa fa-file-pdf text-danger me-2"></i>
+                          <a href="https://github.com/e21212-collab/FYP-Portfolio_vkrr/blob/main/docs/offline%20dataset%20org%20diagram.pdf">Deliverable 21: Offline Dataset Organization Diagram .</a>
+                    <li class="mb-3">  
+                          <i class="fa fa-file-pdf text-danger me-2"></i>
+                          <a href="https://github.com/e21212-collab/FYP-Portfolio_vkrr/blob/main/docs/Test%20Data%20Files.zip">Deliverable 22: Touch Event Dataset (CSV).</a>
+                     <p>Deliverable 23: Experimental Data Collection Setup</p>
+                    <div class="text-center mt-3">
+                      <img src="https://github.com/e21212-collab/FYP-Portfolio_vkrr/blob/main/img/Data%20Collection%20Setup.jpeg"
+                         alt="Brief description of image."
+                         style="max-width:50%; border-radius:8px; border:1px solid #dee2e6;">
+                      <p class="text-muted small mt-2">
+                         <em>Experimental Data Collection Setup.</em>
+                      </p>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
