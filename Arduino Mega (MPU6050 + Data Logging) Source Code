@@ -1,0 +1,252 @@
+#include <Wire.h>
+#include <MPU6050.h>
+#include <string.h>
+#include <stdlib.h>
+
+// MPU6050 inside GY-87
+MPU6050 gy87Mpu(0x68);
+
+// ============================================================
+// ESP32 data variables
+// ============================================================
+
+unsigned long espTimeMs = 0;
+
+int espServo1Us = 1500;
+int espServo2Us = 1500;
+
+int16_t espAx = 0;
+int16_t espAy = 0;
+int16_t espAz = 0;
+
+int16_t espGx = 0;
+int16_t espGy = 0;
+int16_t espGz = 0;
+
+// ============================================================
+// UART receive buffer
+// ============================================================
+
+const int RECEIVE_BUFFER_SIZE = 120;
+
+char receiveBuffer[RECEIVE_BUFFER_SIZE];
+
+int receiveIndex = 0;
+
+bool newEspPacketAvailable = false;
+
+// ============================================================
+// Read and parse ESP32 UART packet
+// ============================================================
+
+void readESP32Packet()
+{
+  while (Serial1.available() > 0)
+  {
+    char receivedCharacter = Serial1.read();
+
+    if (receivedCharacter == '\n')
+    {
+      receiveBuffer[receiveIndex] = '\0';
+
+      parseESP32Packet(receiveBuffer);
+
+      receiveIndex = 0;
+    }
+    else if (receivedCharacter != '\r')
+    {
+      if (receiveIndex < RECEIVE_BUFFER_SIZE - 1)
+      {
+        receiveBuffer[receiveIndex] =
+          receivedCharacter;
+
+        receiveIndex++;
+      }
+      else
+      {
+        // Reset if packet is too long
+        receiveIndex = 0;
+      }
+    }
+  }
+}
+
+// ============================================================
+// Parse packet:
+// time,servo1,servo2,ax,ay,az,gx,gy,gz
+// ============================================================
+
+void parseESP32Packet(char *packet)
+{
+  char *token;
+
+  token = strtok(packet, ",");
+  if (token == NULL) return;
+  espTimeMs = strtoul(token, NULL, 10);
+
+  token = strtok(NULL, ",");
+  if (token == NULL) return;
+  espServo1Us = atoi(token);
+
+  token = strtok(NULL, ",");
+  if (token == NULL) return;
+  espServo2Us = atoi(token);
+
+  token = strtok(NULL, ",");
+  if (token == NULL) return;
+  espAx = atoi(token);
+
+  token = strtok(NULL, ",");
+  if (token == NULL) return;
+  espAy = atoi(token);
+
+  token = strtok(NULL, ",");
+  if (token == NULL) return;
+  espAz = atoi(token);
+
+  token = strtok(NULL, ",");
+  if (token == NULL) return;
+  espGx = atoi(token);
+
+  token = strtok(NULL, ",");
+  if (token == NULL) return;
+  espGy = atoi(token);
+
+  token = strtok(NULL, ",");
+  if (token == NULL) return;
+  espGz = atoi(token);
+
+  newEspPacketAvailable = true;
+}
+
+// ============================================================
+// Setup
+// ============================================================
+
+void setup()
+{
+  // USB serial to laptop
+  Serial.begin(115200);
+
+  // ESP32 UART connection
+  // Mega RX1 = pin 19
+  // Mega TX1 = pin 18
+  Serial1.begin(115200);
+
+  // Mega I2C
+  // SDA = pin 20
+  // SCL = pin 21
+  Wire.begin();
+  Wire.setClock(400000);
+
+  gy87Mpu.initialize();
+
+  if (gy87Mpu.testConnection())
+  {
+    Serial.println("# GY-87 MPU6050 connected");
+  }
+  else
+  {
+    Serial.println("# GY-87 MPU6050 connection failed");
+  }
+
+  Serial.println(
+    "mega_time_ms,"
+    "esp_time_ms,"
+    "servo1_us,"
+    "servo2_us,"
+    "esp_ax,esp_ay,esp_az,"
+    "esp_gx,esp_gy,esp_gz,"
+    "gy87_ax,gy87_ay,gy87_az,"
+    "gy87_gx,gy87_gy,gy87_gz"
+  );
+}
+
+// ============================================================
+// Main loop
+// ============================================================
+
+void loop()
+{
+  readESP32Packet();
+
+  // Produce one combined row whenever a new ESP32 packet arrives
+  if (newEspPacketAvailable)
+  {
+    newEspPacketAvailable = false;
+
+    // --------------------------------------------------------
+    // Read MPU6050 inside GY-87
+    // --------------------------------------------------------
+
+    int16_t gy87Ax;
+    int16_t gy87Ay;
+    int16_t gy87Az;
+
+    int16_t gy87Gx;
+    int16_t gy87Gy;
+    int16_t gy87Gz;
+
+    gy87Mpu.getMotion6(
+      &gy87Ax,
+      &gy87Ay,
+      &gy87Az,
+      &gy87Gx,
+      &gy87Gy,
+      &gy87Gz
+    );
+
+    // --------------------------------------------------------
+    // Send combined CSV row to laptop
+    // --------------------------------------------------------
+
+    Serial.print(millis());
+    Serial.print(",");
+
+    Serial.print(espTimeMs);
+    Serial.print(",");
+
+    Serial.print(espServo1Us);
+    Serial.print(",");
+
+    Serial.print(espServo2Us);
+    Serial.print(",");
+
+    // ESP32 MPU6050
+    Serial.print(espAx);
+    Serial.print(",");
+
+    Serial.print(espAy);
+    Serial.print(",");
+
+    Serial.print(espAz);
+    Serial.print(",");
+
+    Serial.print(espGx);
+    Serial.print(",");
+
+    Serial.print(espGy);
+    Serial.print(",");
+
+    Serial.print(espGz);
+    Serial.print(",");
+
+    // GY-87 MPU6050
+    Serial.print(gy87Ax);
+    Serial.print(",");
+
+    Serial.print(gy87Ay);
+    Serial.print(",");
+
+    Serial.print(gy87Az);
+    Serial.print(",");
+
+    Serial.print(gy87Gx);
+    Serial.print(",");
+
+    Serial.print(gy87Gy);
+    Serial.print(",");
+
+    Serial.println(gy87Gz);
+  }
+}
